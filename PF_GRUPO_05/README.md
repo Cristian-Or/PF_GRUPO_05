@@ -1,10 +1,11 @@
 # Servicios de ThanosGym
 
-Backend SOA para registrar clientes, membresías, ventas, pagos, notificaciones, autenticación, gateway y orquestación de procesos de ThanosGym. El proyecto no tiene frontend: todo se prueba con Swagger o Postman.
+Backend SOA para registrar clientes, membresías, ventas, pagos, notificaciones, autenticación, gateway y orquestación de procesos de ThanosGym. El proyecto se puede probar desde Postman y se diseñará un Frontend para consumir los servicios.
 
 ## Antes de iniciar
 
 Se necesita Java JDK 21. Gradle ya viene incluido en el proyecto, así que no hace falta instalarlo aparte.
+
 
 ## Servicios y puertos
 
