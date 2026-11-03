@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: servicio-autenticacion
+  datasource:
+    url: jdbc:h2:file:./data/autenticacion;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  port: 9006
+thanosgym:
+  jwt:
+    secret: ${JWT_SECRET:VGhhbm9zR3ltLXNlY3JldC1rZXktMjAyNi1taW5pbXVtLTMyLWJ5dGVzIQ==}
+    expiration-seconds: 28800
+  auth:
+    bloqueo-minutos: 15
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3312/thanosgym_auth?createDatabaseIfNotExist=true&serverTimezone=America/Lima}
+    username: ${DB_USER:thanosgym}
+    password: ${DB_PASSWORD:thanosgym}
