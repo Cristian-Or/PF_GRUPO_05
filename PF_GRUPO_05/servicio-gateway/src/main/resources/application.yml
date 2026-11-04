@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: servicio-gateway
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+thanosgym:
+  gateway:
+    security:
+      enabled: true
+    timeout:
+      connect-ms: 2000
+      read-ms: 3000
+    routes:
+      auth: ${AUTH_SERVICE_URL:http://localhost:9006}
+      clientes: ${CLIENTE_SERVICE_URL:http://localhost:9001}
+      membresias: ${MEMBRESIA_SERVICE_URL:http://localhost:9002}
+      ventas: ${VENTA_SERVICE_URL:http://localhost:9003}
+      pagos: ${PAGO_SERVICE_URL:http://localhost:9004}
+      notificaciones: ${NOTIFICACION_SERVICE_URL:http://localhost:9005}
+      orquestacion: ${ORQUESTADOR_SERVICE_URL:http://localhost:9007}
