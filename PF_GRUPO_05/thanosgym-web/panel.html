@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThanosGym | Panel de gestión</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <a class="logo" href="panel.html">
+            THANOS<span>GYM</span>
+        </a>
+
+        <nav>
+            <a href="panel.html">Panel principal</a>
+            <a href="membresias.html">Membresías</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="ventas.html">Ventas</a>
+            <button class="boton" id="btnCerrarSesion" type="button">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada" id="inicio">
+            <p class="etiqueta">SISTEMA DE GESTIÓN</p>
+
+            <h1>
+                Bienvenido a<br>
+                <span>ThanosGym.</span>
+            </h1>
+
+            <p class="descripcion">
+                Administra las membresías y los clientes
+                desde un solo lugar.
+            </p>
+        </section>
+
+        <section class="membresias">
+            <p class="etiqueta">PANEL PRINCIPAL</p>
+            <h2>¿Qué deseas gestionar?</h2>
+
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <h3>Membresías</h3>
+                    <p>
+                        Consulta los planes disponibles,
+                        sus precios y su duración.
+                    </p>
+                    <a class="boton" href="membresias.html">
+                        Ver membresías
+                    </a>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Clientes</h3>
+                    <p>
+                        Registra clientes y consulta
+                        la información guardada.
+                    </p>
+                    <a class="boton" href="clientes.html">
+                        Gestionar clientes
+                    </a>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Ventas</h3>
+                    <p>
+                        Registra ventas de membresías
+                        y consulta el resultado de la operación.
+                    </p>
+                    <a class="boton" href="ventas.html">
+                        Gestionar ventas
+                    </a>
+                </article>
+                
+                <article class="tarjeta">
+                    <h3>Pagos</h3>
+                    <p>
+                        Consulta los pagos registrados
+                        y visualiza sus comprobantes.
+                    </p>
+                    <a class="boton" href="pagos.html">
+                        Gestionar pagos
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="acceso">
+            <h2>ThanosGym</h2>
+            <p>
+                Plataforma académica de gestión de membresías
+                basada en una arquitectura orientada a servicios.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>ThanosGym · Proyecto académico de arquitectura SOA</p>
+    </footer>
+</body>
+</html>
