@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThanosGym | Bienvenido</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body class="pagina-inicio">
+
+    <header class="encabezado">
+        <a class="logo" href="#inicio">
+            THANOS<span>GYM</span>
+        </a>
+
+        <nav>
+            <!--<a href="#inicio">Inicio</a>-->
+            <a href="#acceso">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN PRINCIPAL -->
+        <section class="portada" id="inicio">
+
+            <p class="etiqueta">
+                BIENVENIDO A THANOSGYM
+            </p>
+
+            <h1>
+                Transforma tu cuerpo.
+                <br>
+                <span>Supera tus límites.</span>
+            </h1>
+
+            <p class="descripcion">
+                Un espacio para alcanzar tus objetivos,
+                fortalecer tu disciplina y construir
+                una mejor versión de ti.
+            </p>
+
+            <!-- <a class="boton" href="#acceso">
+                Acceder al sistema
+            </a>-->
+
+        </section>
+
+        <!-- ACCESO AL SISTEMA -->
+        <section class="acceso" id="acceso">
+
+            <p class="etiqueta">ACCESO DE USUARIOS</p>
+
+            <h2>Gestiona THANOSGym</h2>
+
+            <p>
+                Inicia sesión para acceder a las herramientas
+                de administración y gestión del gimnasio.
+            </p>
+
+            <button
+                class="boton"
+                id="btnAcceso"
+                type="button">
+                Iniciar sesión
+            </button>
+
+            <!-- INFORMACIÓN DE LA SESIÓN -->
+            <section
+                id="panelUsuario"
+                class="panel-usuario"
+                hidden>
+
+                <h2>Mi sesión</h2>
+
+                <p>
+                    Bienvenido,
+                    <strong id="nombreUsuario"></strong>
+                </p>
+
+                <p>
+                    Rol:
+                    <span id="rolUsuario"></span>
+                </p>
+
+                <p class="estado-sesion">
+                    Sesión iniciada correctamente
+                </p>
+
+            </section>
+
+            <!-- PLANES DISPONIBLES -->
+            <section
+                id="seccionPlanes"
+                class="seccion-planes"
+                hidden>
+
+                <h2>Nuestros planes</h2>
+
+                <p>
+                    Elige la membresía que mejor se adapte a ti.
+                </p>
+
+                <p id="estadoPlanes" role="status">
+                    Cargando planes...
+                </p>
+
+                <div
+                    id="listaPlanes"
+                    class="lista-planes">
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            THANOSGym · Sistema de gestión de membresías
+        </p>
+    </footer>
+
+</body>
+</html>
