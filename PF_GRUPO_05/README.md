@@ -11,7 +11,7 @@ Se necesita Java JDK 21. Gradle ya viene incluido en el proyecto, así que no ha
 
 | Servicio | Puerto | Uso |
 |---|---:|---|
-| API Gateway | 8080 | Entrada principal para Postman o cliente externo |
+| API Gateway | 8080 | Entrada principal |
 | Clientes | 9001 | Registro y consulta de clientes |
 | Membresías | 9002 | Planes y membresías |
 | Ventas | 9003 | Registro de ventas |
@@ -20,21 +20,10 @@ Se necesita Java JDK 21. Gradle ya viene incluido en el proyecto, así que no ha
 | Acceso | 9006 | Login y validación de token |
 | Orquestador | 9007 | Coordina el flujo completo de venta de membresía |
 
-Cada servicio conserva su propio Swagger:
 
-```text
-http://localhost:PUERTO/swagger-ui.html
-```
+## Cómo levantar cada servicio
 
-El gateway también tiene Swagger:
-
-```text
-http://localhost:8080/swagger-ui.html
-```
-
-## Cómo ejecutar
-
-Abrir una terminal por servicio y ejecutar:
+Abre una terminal por cada servicio y ejecuta el comando correspondiente:
 
 ```powershell
 .\gradlew.bat :servicio-autenticacion:bootRun
@@ -64,7 +53,7 @@ El gateway corre en:
 http://localhost:8080
 ```
 
-Su trabajo es recibir las peticiones externas, validar el token y redirigir al servicio correcto.
+Este servicio recibe todas las peticiones y verifica el token para poder redirigir a los demás servicios.
 
 El orquestador corre en:
 
@@ -88,26 +77,7 @@ Orquestador → Cliente → Membresía → Venta → Pago → Notificación simu
 
 ## Usuarios de prueba
 
-| Usuario | Contraseña | Rol |
-|---|---|---|
-| `admin` | `Admin123*` | ADMIN |
-| `recepcion` | `Recepcion123*` | RECEPCIONISTA |
-
-Login por gateway:
-
-```http
-POST http://localhost:8080/api/v1/auth/login
-Content-Type: application/json
-```
-
-```json
-{
-  "usuario": "admin",
-  "password": "Admin123*"
-}
-```
-
-Después se copia el token y se envía en las demás peticiones:
+Toma el token y se envía en las demás peticiones:
 
 ```text
 Authorization: Bearer <token>
