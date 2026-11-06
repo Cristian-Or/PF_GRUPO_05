@@ -1,0 +1,1473 @@
+
+:root {
+    --fondo: #101114;
+    --superficie: #1b1d22;
+    --texto: #f5f5f5;
+    --secundario: #b7b8c0;
+    --acento: #b8f34a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #101114;
+    background-image:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(75, 115, 35, 0.16),
+            transparent 65%
+        );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    border-bottom: 1px solid #303137;
+}
+
+.logo {
+    color: var(--texto);
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span,
+.portada h1 span {
+    color: var(--acento);
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--acento);
+}
+
+.portada {
+    padding: 60px 8% 80px;
+    background: transparent;
+}
+
+.etiqueta {
+    color: var(--acento);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 22px 0;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+}
+
+.descripcion {
+    max-width: 540px;
+    color: var(--secundario);
+    line-height: 1.7;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--acento);
+    color: #151710;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.membresias,
+.acceso {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.membresias > p:not(.etiqueta),
+.acceso p {
+    color: var(--secundario);
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.tarjeta {
+    padding: 28px;
+    border: 1px solid #35373e;
+    border-radius: 12px;
+    background: var(--superficie);
+}
+
+.tarjeta p {
+    color: var(--secundario);
+    line-height: 1.6;
+}
+
+.destacado {
+    border-color: var(--acento);
+}
+
+footer {
+    padding: 25px;
+    border-top: 1px solid #303137;
+    color: var(--secundario);
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .encabezado {
+        align-items: flex-start;
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .portada {
+        padding-top: 70px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel-usuario {
+  max-width: 420px;
+  margin: 24px auto;
+  padding: 22px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #171717;
+  color: white;
+}
+
+.panel-usuario h2 {
+  margin-top: 0;
+}
+
+.panel-usuario p {
+  margin: 10px 0;
+}
+
+.estado-sesion {
+  color: #86efac;
+  font-size: 0.9rem;
+}
+
+.panel-usuario[hidden] {
+  display: none;
+}
+
+.seccion-planes {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #222222;
+}
+
+.lista-planes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tarjeta-plan {
+  padding: 22px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+
+.tarjeta-plan h3 {
+  margin-top: 0;
+}
+
+.precio-plan {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.seccion-planes[hidden] {
+  display: none;
+}
+
+/* ========================================
+   THANOSGYM - FORMULARIO DE CLIENTES
+   ======================================== */
+
+#formCliente {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 26px;
+    margin: 20px 0 30px;
+    background: #111827;
+    border: 1px solid #293548;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+#formCliente label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #E5E7EB;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#formCliente input,
+#formCliente select {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    background: #1F2937;
+    color: #F9FAFB;
+    border: 1px solid #374151;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#formCliente input::placeholder {
+    color: #9CA3AF;
+}
+
+#formCliente input:focus,
+#formCliente select:focus {
+    outline: none;
+    border-color: #A3E635;
+    box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.15);
+}
+
+#formCliente select {
+    cursor: pointer;
+}
+
+#formCliente button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 13px 24px;
+    background: #A3E635;
+    color: #17200B;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#formCliente button:hover {
+    background: #BEF264;
+    transform: translateY(-1px);
+}
+
+#formCliente button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+/* Mensajes de registro */
+
+#estadoRegistroCliente {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 600px) {
+    #formCliente {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 16px;
+    }
+
+    #formCliente button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+    THANOSGYM - BUSQUEDA DE CLIENTES
+   ======================================== */
+
+#buscarCliente {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    background: #1F2937;
+    color: #F9FAFB;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#buscarCliente::placeholder {
+    color: #9CA3AF;
+}
+
+#buscarCliente:focus {
+    border-color: #A3E635;
+    box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.15);
+}
+
+/* Botones de búsqueda */
+
+#btnBuscarCliente,
+#btnMostrarTodos {
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s,
+                transform 0.2s;
+}
+
+#btnBuscarCliente {
+    background: #A3E635;
+    color: #17200B;
+    border: 1px solid #A3E635;
+}
+
+#btnBuscarCliente:hover {
+    background: #BEF264;
+    border-color: #BEF264;
+    transform: translateY(-1px);
+}
+
+#btnMostrarTodos {
+    background: transparent;
+    color: #E5E7EB;
+    border: 1px solid #4B5563;
+}
+
+#btnMostrarTodos:hover {
+    background: #1F2937;
+    border-color: #A3E635;
+}
+
+/* Distribución de la zona de búsqueda */
+
+.busqueda-clientes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.busqueda-clientes #buscarCliente {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .busqueda-clientes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .busqueda-clientes #btnBuscarCliente,
+    .busqueda-clientes #btnMostrarTodos {
+        width: 100%;
+    }
+}
+
+
+/* ===== Resultado de la venta ===== */
+
+#resultadoVenta[hidden] {
+    display: none !important;
+}
+
+#resultadoVenta {
+    margin-top: 30px;
+    padding: 26px;
+    border: 1px solid rgba(150, 210, 100, 0.25);
+    border-radius: 18px;
+    background: rgba(20, 25, 23, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Encabezado */
+
+.resultado-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(150, 210, 100, 0.25);
+}
+
+.resultado-cabecera h3 {
+    margin: 0;
+    color: #f3fff6;
+    font-size: 1.5rem;
+    font-weight: 750;
+    letter-spacing: 0.2px;
+}
+
+.resultado-estado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(120, 130, 120, 0.16);
+    border: 1px solid rgba(180, 190, 180, 0.2);
+    color: #e5eee7;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Estado de operación completada */
+
+.resultado-estado.estado-completado {
+    background: rgba(11, 29, 17, 0.87);
+    border: 1px solid rgba(80, 255, 140, 0.75);
+    color: #91ffb5;
+
+    box-shadow:
+        0 0 8px rgba(65, 255, 130, 0.50),
+        0 0 18px rgba(65, 255, 130, 0.22),
+        0 0 30px rgba(65, 255, 130, 0.12);
+}
+
+/* Distribución de tarjetas */
+
+.resultado-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Tarjetas */
+
+.resultado-tarjeta {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgba(150, 210, 100, 0.18);
+    border-radius: 15px;
+    background: linear-gradient(
+        145deg,
+        rgba(35, 43, 38, 0.96),
+        rgba(23, 29, 26, 0.96)
+    );
+    color: #edf5ef;
+    transition: border-color 0.35s ease,
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.resultado-tarjeta:hover {
+    border-color: rgba(168, 85, 247, 0.85);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 8px rgba(168, 85, 247, 0.35),
+        0 0 18px rgba(168, 85, 247, 0.25),
+        0 0 30px rgba(168, 85, 247, 0.15),
+        0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.resultado-tarjeta h4,
+.resultado-pasos h4 {
+    margin: 0 0 17px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(150, 210, 100, 0.18);
+    color: #a9ef78;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Datos de las tarjetas */
+
+.resultado-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.resultado-fila {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    overflow-wrap: anywhere;
+}
+
+.resultado-fila:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resultado-etiqueta {
+    color: #aabbb0;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.resultado-valor {
+    color: #f3fff6;
+    font-size: 0.96rem;
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+/* ===== Pasos ejecutados ===== */
+
+.resultado-pasos {
+    margin-top: 22px;
+    padding: 22px;
+
+    border: 1px solid rgba(56, 189, 248, 0.40);
+    border-radius: 15px;
+
+    background: rgba(20, 35, 43, 0.85);
+
+    /* Iluminación permanente */
+    box-shadow:
+        0 0 8px rgba(56, 189, 248, 0.18),
+        0 0 18px rgba(56, 189, 248, 0.12),
+        0 0 30px rgba(56, 189, 248, 0.06);
+
+    /* Transiciones */
+    transition:
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Iluminación intensificada al pasar el cursor */
+
+.resultado-pasos:hover {
+    border-color: rgba(56, 189, 248, 0.90);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 10px rgba(56, 189, 248, 0.45),
+        0 0 22px rgba(56, 189, 248, 0.32),
+        0 0 40px rgba(56, 189, 248, 0.20),
+        0 10px 25px rgba(0, 0, 0, 0.30);
+}
+
+/* Lista de pasos */
+
+.resultado-pasos ol {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.resultado-pasos li {
+    padding: 7px 0 7px 5px;
+    color: #e0ebe3;
+    line-height: 1.6;
+}
+
+.resultado-pasos li::marker {
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 650px) {
+    #resultadoVenta {
+        padding: 18px;
+    }
+
+    .resultado-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .resultado-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .resultado-tarjeta,
+    .resultado-pasos {
+        padding: 17px;
+    }
+}
+
+
+/* =========================================
+    FORMULARIO DE VENTAS - THANOSGYM
+   ========================================= */
+
+/* Distribución de los campos */
+#formVenta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 26px;
+}
+
+/* Título de la sección de membresía */
+#formVenta > h2 {
+    grid-column: 1 / -1;
+    margin: 12px 0 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #35483c;
+    color: #8cf0ad;
+    font-size: 1.2rem;
+}
+
+/* Etiquetas y campos */
+#formVenta > label:not(.opcion-notificacion) {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0;
+    color: #e0ebe3;
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
+/* Cajas de texto y listas desplegables */
+#formVenta input:not([type="checkbox"]),
+#formVenta select {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #405448;
+    border-radius: 9px;
+    background-color: #111b15;
+    color: #f3fff6;
+    font: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Texto de ejemplo dentro de los campos */
+#formVenta input::placeholder {
+    color: #829589;
+}
+
+/* Efecto al seleccionar un campo */
+#formVenta input:not([type="checkbox"]):focus,
+#formVenta select:focus {
+    outline: none;
+    border-color: #55d982;
+    box-shadow: 0 0 0 3px rgb(85 217 130 / 15%);
+}
+
+/* Opciones de las listas */
+#formVenta select option {
+    background-color: #17221c;
+    color: #f3fff6;
+}
+
+/* Observaciones ocupa todo el ancho */
+#formVenta > label[for="observacionesVenta"] {
+    grid-column: 1 / -1;
+}
+
+/* Casilla de notificación */
+#formVenta > .opcion-notificacion {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    padding: 15px 16px;
+    border: 1px solid #35483c;
+    border-radius: 9px;
+    background-color: #17221c;
+    color: #e0ebe3;
+    font-size: 0.92rem;
+    cursor: pointer;
+}
+
+#formVenta .opcion-notificacion input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #55d982;
+    cursor: pointer;
+}
+
+/* Resumen del importe */
+#formVenta .resumen-venta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid #34794b;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #173f2b, #172a20);
+    color: #e0ebe3;
+}
+
+#formVenta .resumen-venta span {
+    font-size: 0.95rem;
+}
+
+#formVenta .resumen-venta strong {
+    color: #8cf0ad;
+    font-size: 1.35rem;
+}
+
+
+/* Botón para procesar la venta - NARANJA NEÓN */
+#formVenta > button[type="submit"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 2px;
+    padding: 15px 25px;
+
+    border: 1px solid #ffbd75;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #ffad42,
+        #ff7900
+    );
+
+    color: #271304;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px rgba(255, 138, 24, 0.50),
+        0 0 18px rgba(255, 138, 24, 0.30),
+        0 5px 15px rgba(0, 0, 0, 0.35);
+
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+#formVenta > button[type="submit"]:hover {
+    background: linear-gradient(
+        135deg,
+        #ffd18c,
+        #ff9b32
+    );
+
+    border-color: #ffe0b5;
+
+    box-shadow:
+        0 0 10px rgba(255, 138, 24, 0.80),
+        0 0 25px rgba(255, 138, 24, 0.55),
+        0 0 40px rgba(255, 138, 24, 0.30),
+        0 10px 25px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* Al presionar */
+#formVenta > button[type="submit"]:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* Deshabilitado */
+#formVenta > button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* Mensaje de estado de la operación */
+#estadoVenta {
+    margin-top: 18px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Adaptación para celulares y pantallas pequeñas */
+@media (max-width: 650px) {
+    #formVenta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    #formVenta > h2,
+    #formVenta > label[for="observacionesVenta"],
+    #formVenta > .opcion-notificacion,
+    #formVenta .resumen-venta,
+    #formVenta > button[type="submit"] {
+        grid-column: 1;
+    }
+
+    #formVenta .resumen-venta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Botón para limpiar los datos del cliente */
+#formVenta .acciones-cliente {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =========================================
+   BOTÓN LIMPIAR CAMPOS - MORADO NEÓN
+   ========================================= */
+
+#formVenta #btnLimpiarCliente {
+    padding: 12px 20px;
+
+    border: 1px solid rgba(192, 132, 252, 0.75);
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #35204d,
+        #241432
+    );
+
+    color: #f3e8ff;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 7px rgba(168, 85, 247, 0.25),
+        0 0 16px rgba(168, 85, 247, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    transition: all 0.3s ease;
+}
+
+/* Iluminación al pasar el cursor */
+
+#formVenta #btnLimpiarCliente:hover {
+    background: linear-gradient(
+        135deg,
+        #63349a,
+        #40205f
+    );
+
+    border-color: #d8b4fe;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(168, 85, 247, 0.55),
+        0 0 22px rgba(168, 85, 247, 0.35),
+        0 0 35px rgba(168, 85, 247, 0.20),
+        0 8px 18px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-3px);
+}
+
+/* Al presionar */
+
+#formVenta #btnLimpiarCliente:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+    ESTADO VISUAL DEL CLIENTE
+   ========================================= */
+
+#formVenta > .estado-cliente {
+    grid-column: 1 / -1;
+    padding: 12px 15px;
+    border: 1px solid #405448;
+    border-left: 4px solid #829589;
+    border-radius: 8px;
+    background: #17221c;
+    color: #dce8df;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#formVenta > .estado-cliente.estado-pendiente {
+    border-color: #405448;
+    border-left-color: #aabbb0;
+    background: #17221c;
+    color: #dce8df;
+}
+
+#formVenta > .estado-cliente.estado-buscando {
+    border-color: #365c78;
+    border-left-color: #72baff;
+    background: #172733;
+    color: #c4e4ff;
+}
+
+#formVenta > .estado-cliente.estado-existente {
+    border-color: #2b7547;
+    border-left-color: #55d982;
+    background: #173f2b;
+    color: #a5f4bb;
+}
+
+#formVenta > .estado-cliente.estado-nuevo {
+    border-color: #8a6a2c;
+    border-left-color: #f0c36a;
+    background: #392f1b;
+    color: #ffe2a1;
+}
+
+#formVenta > .estado-cliente.estado-error {
+    border-color: #8d4141;
+    border-left-color: #ff8585;
+    background: #3b2222;
+    color: #ffc1c1;
+}
+.mensaje-venta-exito {
+    color: #166534;
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.mensaje-venta-error {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border: 1px solid #fca5a5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.mensaje-venta-aviso {
+    color: #854d0e;
+    background-color: #fef9c3;
+    border: 1px solid #fde047;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Ventanas emergentes de ThanosGym */
+.toast-venta {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    width: min(360px, calc(100vw - 32px));
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #166534;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    animation: toast-entrada 0.3s ease-out;
+}
+
+.toast-venta-icono {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.toast-venta-contenido {
+    flex: 1;
+}
+
+.toast-venta-titulo {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.toast-venta-mensaje {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.toast-venta-error {
+    background: #991b1b;
+}
+
+.toast-venta-aviso {
+    background: #854d0e;
+}
+
+@keyframes toast-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .toast-venta {
+        top: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+}
+
+/* =========================================
+   HISTORIAL DE VENTAS DEL CLIENTE
+   ========================================= */
+
+.seccion-historial {
+    margin-top: 32px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.seccion-historial h2 {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.seccion-historial > p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+/* Botón para consultar el historial */
+
+#btnHistorialVentas {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#btnHistorialVentas:hover {
+    background-color: #374151;
+    transform: translateY(-1px);
+}
+
+#btnHistorialVentas:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Mensajes de estado del historial */
+
+#estadoHistorialVentas {
+    margin: 18px 0 14px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Contenedor adaptable de la tabla */
+
+#contenedorHistorialVentas {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+/* Tabla de ventas */
+
+#contenedorHistorialVentas table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Encabezados */
+
+#contenedorHistorialVentas thead {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+#contenedorHistorialVentas th {
+    padding: 15px 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-bottom: 2px solid #374151;
+}
+
+/* Celdas */
+
+#contenedorHistorialVentas td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+/* Filas alternadas */
+
+#contenedorHistorialVentas tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+#contenedorHistorialVentas tbody tr:hover {
+    background-color: #eff6ff;
+}
+
+/* Quitar el borde de la última fila */
+
+#contenedorHistorialVentas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Adaptación para móviles */
+
+@media (max-width: 600px) {
+    .seccion-historial {
+        padding: 16px;
+        margin-top: 24px;
+    }
+
+    .seccion-historial h2 {
+        font-size: 19px;
+    }
+
+    #btnHistorialVentas {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   ETIQUETAS DE ESTADO DE MEMBRESÍA
+   ========================================= */
+
+.etiqueta-estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* Membresía activa */
+
+.estado-activa {
+    color: #166534;
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+/* Membresía vencida */
+
+.estado-vencida {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+/* Estado pendiente */
+
+.estado-pendiente {
+    color: #92400e;
+    background-color: #fef3c7;
+    border: 1px solid #fde68a;
+}
+
+/* Membresía cancelada */
+
+.estado-cancelada {
+    color: #4b5563;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+}
+
+/* Otros estados */
+
+.estado-otro {
+    color: #1d4ed8;
+    background-color: #dbeafe;
+    border: 1px solid #bfdbfe;
+}
+
+/* =========================================
+    MONTO COBRADO
+   ========================================= */
+
+.monto-venta {
+    display: inline-block;
+    color: #166534;
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* Ventana emergente de comprobantes */
+#modalComprobante {
+    width: min(90%, 560px);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 24px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+#modalComprobante::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.encabezado-modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.encabezado-modal h2 {
+    margin: 0;
+}
+
+#btnCerrarComprobante {
+    font-size: 28px;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#contenidoComprobante {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    padding: 16px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #222;
+}
+
+.acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+/* ========================================
+   PAGINA DE GESTION DE PAGOS
+   ======================================== */
+
+.pagina-pagos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 40px;
+}
+
+.pagina-pagos > header {
+    margin-bottom: 18px;
+}
+
+.pagina-pagos > header h1 {
+    margin-bottom: 8px;
+}
+
+.pagina-pagos > header p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Navegacion de regreso al panel */
+
+.navegacion-pagos {
+    margin: 0 0 28px;
+}
+
+.enlace-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid #d5d9df;
+    border-radius: 8px;
+    background: #fff;
+    color: #243447;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.enlace-volver:hover {
+    background: #edf1f5;
+    transform: translateY(-1px);
+}
+
+/* Secciones de busqueda y resultados */
+
+.pagina-pagos > section {
+    margin-bottom: 26px;
+    padding: 24px;
+    border: 1px solid #e0e4e8;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pagina-pagos > section h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #243447;
+}
+
+/* Formulario de busqueda */
+
+#formularioBuscarPagos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#formularioBuscarPagos label {
+    font-weight: 600;
+    color: #333;
+}
+
+#dniClientePagos {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 14px;
+    border: 1px solid #cbd2d9;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#dniClientePagos:focus {
+    outline: none;
+    border-color: #315b83;
+    box-shadow: 0 0 0 3px rgba(49, 91, 131, 0.15);
+}
+
+#formularioBuscarPagos button {
+    margin-top: 6px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #243f5b;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#formularioBuscarPagos button:hover {
+    background: #172d43;
+}
+
+#estadoPagos {
+    margin: 16px 0 0;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+/* Distribucion de tarjetas de pagos */
+
+#contenedorPagos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 18px;
+}
+
+.pagina-pagos #contenedorPagos > .tarjeta {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e0e4e8;
+    border-radius: 10px;
+    background: #f9fafb;
+    overflow-wrap: anywhere;
+}
