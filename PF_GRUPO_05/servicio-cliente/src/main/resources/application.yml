@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: servicio-cliente
+  datasource:
+    url: jdbc:h2:file:./data/clientes;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  port: 9001
+thanosgym:
+  membresias:
+    url: ${MEMBRESIAS_URL:http://localhost:9002}
+    connect-timeout-ms: ${MEMBRESIAS_CONNECT_TIMEOUT_MS:1000}
+    read-timeout-ms: ${MEMBRESIAS_READ_TIMEOUT_MS:1500}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/thanosgym_clientes?createDatabaseIfNotExist=true&serverTimezone=America/Lima}
+    username: ${DB_USER:thanosgym}
+    password: ${DB_PASSWORD:thanosgym}
