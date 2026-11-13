@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ThanosGym | Gestión de clientes</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="encabezado">
+        <a class="logo" href="panel.html">
+            THANOS<span>GYM</span>
+        </a>
+
+        <nav>
+            <a href="panel.html">Panel principal</a>
+            <a href="membresias.html">Membresías</a>
+            <a href="clientes.html">Clientes</a>
+
+            <button
+                class="boton"
+                id="btnCerrarSesion"
+                type="button">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada">
+            <p class="etiqueta">THANOSGYM</p>
+
+            <h1>Gestión de <span>clientes.</span></h1>
+
+            <p class="descripcion">
+                Registra nuevos clientes y consulta la información
+                de las personas registradas en ThanosGym.
+            </p>
+        </section>
+
+        <section class="membresias">
+            <p class="etiqueta">NUEVO REGISTRO</p>
+
+            <h2>Registrar cliente</h2>
+
+            <p>
+                Completa los datos para registrar un nuevo cliente.
+                Los campos marcados con * son obligatorios.
+            </p>
+
+            <form id="formCliente">
+                <div class="campo-formulario">
+                    <label for="dniCliente">DNI *</label>
+                    <input
+                        type="text"
+                        id="dniCliente"
+                        name="dni"
+                        inputmode="numeric"
+                        pattern="[0-9]{8}"
+                        maxlength="8"
+                        placeholder="Ej. 87654321"
+                        required>
+                    <small>Debe contener exactamente 8 dígitos.</small>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="nombresCliente">Nombres *</label>
+                    <input
+                        type="text"
+                        id="nombresCliente"
+                        name="nombres"
+                        maxlength="80"
+                        placeholder="Ingresa los nombres"
+                        required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="apellidosCliente">Apellidos *</label>
+                    <input
+                        type="text"
+                        id="apellidosCliente"
+                        name="apellidos"
+                        maxlength="80"
+                        placeholder="Ingresa los apellidos"
+                        required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="telefonoCliente">Teléfono *</label>
+                    <input
+                        type="tel"
+                        id="telefonoCliente"
+                        name="telefono"
+                        inputmode="numeric"
+                        pattern="9[0-9]{8}"
+                        maxlength="9"
+                        placeholder="Ej. 987654321"
+                        required>
+                    <small>Usa un celular peruano de 9 dígitos.</small>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="emailCliente">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="emailCliente"
+                        name="email"
+                        maxlength="120"
+                        placeholder="cliente@ejemplo.com">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="fechaNacimientoCliente">
+                        Fecha de nacimiento
+                    </label>
+                    <input
+                        type="date"
+                        id="fechaNacimientoCliente"
+                        name="fechaNacimiento">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="planCliente">Plan (opcional)</label>
+                    <input
+                        type="text"
+                        id="planCliente"
+                        name="plan"
+                        maxlength="30"
+                        placeholder="Ej. MENSUAL">
+                </div>
+
+                <button
+                    class="boton"
+                    id="btnRegistrarCliente"
+                    type="submit">
+                    Registrar cliente
+                </button>
+
+                <p
+                    id="estadoRegistroCliente"
+                    role="status"
+                    aria-live="polite">
+                </p>
+            </form>
+        </section>
+
+        <section class="membresias">
+            <p class="etiqueta">CLIENTES REGISTRADOS</p>
+
+            <h2>Consultar clientes</h2>
+
+            <p>
+                Consulta la lista de clientes guardados en el sistema.
+            </p>
+
+            <div class="busqueda-clientes">
+                <label for="buscarCliente">Buscar por nombre o apellido</label>
+
+                <input
+                    type="search"
+                    id="buscarCliente"
+                    placeholder="Escribe un nombre o apellido">
+
+                <button
+                    class="boton"
+                    id="btnBuscarCliente"
+                    type="button">
+                    Buscar
+                </button>
+
+                <button
+                    class="boton"
+                    id="btnMostrarTodos"
+                    type="button">
+                    Mostrar todos
+                </button>
+            </div>
+
+            <p
+                id="estadoListaClientes"
+                role="status"
+                aria-live="polite">
+                Los clientes aparecerán aquí cuando conectemos el servicio.
+            </p>
+
+            <div id="listaClientes" class="tarjetas"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>ThanosGym · Proyecto académico de arquitectura SOA</p>
+    </footer>
+</body>
+</html>
