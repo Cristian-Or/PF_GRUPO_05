@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThanosGym | Membresías</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <a class="logo" href="panel.html">
+            THANOS<span>GYM</span>
+        </a>
+
+        <nav>
+            <a href="panel.html">Panel principal</a>
+            <a href="membresias.html">Membresías</a>
+            <a href="clientes.html">Clientes</a>
+            <button class="boton" id="btnCerrarSesion" type="button">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada">
+            <p class="etiqueta">THANOSGYM</p>
+            <h1>Nuestros <span>planes.</span></h1>
+            <p class="descripcion">
+                Consulta los planes disponibles, sus precios
+                y la duración de cada membresía.
+            </p>
+        </section>
+
+        <section class="membresias">
+            <h2>Planes disponibles</h2>
+
+            <p id="estadoMembresias" role="status" aria-live="polite">
+                Cargando planes...
+            </p>
+
+            <div class="tarjetas" id="listaMembresias"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>ThanosGym · Proyecto académico de arquitectura SOA</p>
+    </footer>
+</body>
+</html>
