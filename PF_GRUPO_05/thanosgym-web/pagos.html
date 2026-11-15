@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de pagos | ThanosGym</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="contenedor pagina-pagos">
+        <header>
+            <h1>Gestión de pagos</h1>
+            <p>Consulta los pagos y comprobantes de los clientes.</p>
+        </header>
+        <nav class="navegacion-pagos" aria-label="Navegación principal">
+            <a class="enlace-volver" href="panel.html">
+                &larr; Volver al panel principal
+            </a>
+        </nav>
+
+        <section aria-labelledby="tituloBusqueda">
+            <h2 id="tituloBusqueda">Buscar pagos por cliente</h2>
+
+            <form id="formularioBuscarPagos">
+                <label for="dniClientePagos">DNI del cliente</label>
+                <input
+                    type="text"
+                    id="dniClientePagos"
+                    name="dni"
+                    inputmode="numeric"
+                    maxlength="8"
+                    pattern="[0-9]{8}"
+                    placeholder="Ingresa el DNI de 8 dígitos"
+                    required
+                >
+                <button type="submit" id="btnBuscarPagos">
+                    Buscar pagos
+                </button>
+            </form>
+
+            <p id="estadoPagos" role="status" aria-live="polite">
+                Ingresa el DNI de un cliente para consultar sus pagos.
+            </p>
+        </section>
+
+        <section aria-labelledby="tituloResultados">
+            <h2 id="tituloResultados">Pagos registrados</h2>
+            <div id="contenedorPagos">
+                <p>Los resultados aparecerán aquí.</p>
+            </div>
+        </section>
+
+        
+        <dialog id="modalComprobante" aria-labelledby="tituloModalComprobante">
+            <div class="encabezado-modal">
+                <h2 id="tituloModalComprobante">Comprobante de pago</h2>
+                <button
+                    type="button"
+                    id="btnCerrarComprobante"
+                    aria-label="Cerrar comprobante"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <pre id="contenidoComprobante">Selecciona un pago para consultar su comprobante.</pre>
+
+            <div class="acciones-modal">
+                <button type="button" id="btnCerrarComprobanteInferior" class="boton">
+                    Cerrar
+                </button>
+            </div>
+        </dialog>
+
+        
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
