@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de membresías | ThanosGym</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <div>
+            <h1>THANOS<span>GYM</span></h1>
+            <p>Gestión de ventas de membresías</p>
+        </div>
+
+        <nav>
+            <a href="panel.html">Panel</a>
+            <a href="membresias.html">Membresías</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="ventas.html">Ventas</a>
+            <button type="button" id="btnCerrarSesion" class="btn-cerrar-sesion">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main class="portada pagina-ventas">
+        <section>
+            <span class="etiqueta">THANOSGYM / OPERACIONES</span>
+            <h2>Registrar una venta</h2>
+            <p>
+                Registra los datos del cliente, selecciona un plan
+                y procesa la venta de su membresía.
+            </p>
+        </section>
+
+        <section class="membresias">
+            <h2>Datos del cliente</h2>
+            <p>
+                Si el cliente ya está registrado, utiliza su DNI
+                para que el servicio pueda verificarlo.
+            </p>
+
+            <form id="formVenta">
+
+                <label for="dniVenta">
+                    DNI
+                    <input
+                        type="text"
+                        id="dniVenta"
+                        maxlength="8"
+                        pattern="[0-9]{8}"
+                        inputmode="numeric"
+                        placeholder="Ej. 12345678"
+                        required
+                    >
+                </label>
+
+                
+                <div id="estadoCliente" class="estado-cliente estado-pendiente"
+                    role="status" aria-live="polite">
+                    Ingresa el DNI para consultar al cliente.
+                </div>
+
+
+                <label for="nombresVenta">
+                    Nombres
+                    <input
+                        type="text"
+                        id="nombresVenta"
+                        maxlength="80"
+                        placeholder="Nombres del cliente"
+                        required
+                    >
+                </label>
+
+                <label for="apellidosVenta">
+                    Apellidos
+                    <input
+                        type="text"
+                        id="apellidosVenta"
+                        maxlength="80"
+                        placeholder="Apellidos del cliente"
+                        required
+                    >
+                </label>
+
+                <label for="telefonoVenta">
+                    Celular
+                    <input
+                        type="tel"
+                        id="telefonoVenta"
+                        maxlength="9"
+                        pattern="9[0-9]{8}"
+                        inputmode="numeric"
+                        placeholder="9XXXXXXXX"
+                        required
+                    >
+                </label>
+
+                <label for="emailVenta">
+                    Correo electrónico
+                    <input
+                        type="email"
+                        id="emailVenta"
+                        maxlength="120"
+                        placeholder="cliente@correo.com"
+                    >
+                </label>
+
+                <label for="fechaNacimientoVenta">
+                    Fecha de nacimiento
+                    <input
+                        type="date"
+                        id="fechaNacimientoVenta"
+                    >
+                </label>
+
+                
+                <div class="acciones-cliente">
+                    <button type="button" id="btnLimpiarCliente">
+                        Limpiar campos del cliente
+                    </button>
+                </div>
+
+                <h2>Datos de la membresía</h2>
+
+                <label for="planVenta">
+                    Plan
+                    <select id="planVenta" required>
+                        <option value="">Selecciona un plan</option>
+                    </select>
+                </label>
+
+                <label for="fechaInicioVenta">
+                    Fecha de inicio
+                    <input
+                        type="date"
+                        id="fechaInicioVenta"
+                        required
+                    >
+                </label>
+
+                <label for="metodoPagoVenta">
+                    Método de pago
+                    <select id="metodoPagoVenta" required>
+                        <option value="">Selecciona un método</option>
+                        <option value="YAPE">Yape</option>
+                        <option value="EFECTIVO">Efectivo</option>
+                        <option value="TARJETA">Tarjeta</option>
+                        <option value="TRANSFERENCIA">Transferencia</option>
+                    </select>
+                </label>
+
+                <label for="observacionesVenta">
+                    Observaciones
+                    <input
+                        type="text"
+                        id="observacionesVenta"
+                        maxlength="300"
+                        placeholder="Observaciones opcionales"
+                    >
+                </label>
+
+                <label class="opcion-notificacion">
+                    <input
+                        type="checkbox"
+                        id="notificacionVenta"
+                        checked
+                    >
+                    Registrar notificación de bienvenida
+                </label>
+
+                <div class="resumen-venta">
+                    <span>Importe de la venta</span>
+                    <strong id="importeVenta">Selecciona un plan</strong>
+                </div>
+
+                <button type="submit" id="btnProcesarVenta">
+                    ⚡Procesar venta
+                </button>
+
+            </form>
+
+            <!-- Historial de ventas del cliente -->
+            <section id="seccionHistorialVentas" class="seccion-historial">
+                <h2>Historial de ventas del cliente</h2>
+
+                <p>
+                    Consulta las membresías y ventas anteriores de un cliente.
+                </p>
+
+                <button type="button" id="btnHistorialVentas">
+                    Ver historial de ventas
+                </button>
+
+                <p id="estadoHistorialVentas" role="status" aria-live="polite">
+                    Busca un cliente por DNI para consultar su historial.
+                </p>
+
+                <div id="contenedorHistorialVentas"></div>
+            </section>
+
+            <p id="estadoVenta" role="status" aria-live="polite"></p>
+        </section>
+
+        <section
+            id="resultadoVenta"
+            class="membresias"
+            hidden
+        >
+            <h2>Resultado de la operación</h2>
+            <div id="detalleVenta"></div>
+        </section>
+    </main>
+
+</body>
+</html>
